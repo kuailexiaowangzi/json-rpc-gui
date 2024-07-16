@@ -1,0 +1,52 @@
+QWidget
+{
+    color: #FFFFFF;
+}
+
+#widgetBackground
+{
+    border-radius: 5px;
+}
+
+#widgetTitleBar
+{
+    background-color: qlineargradient(spread: pad, x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #66B4FF, stop: 1 #1E90FF);
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#labelTitle
+{
+    background-color: none;
+    margin-left: 10px;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#pushButtonClose
+{
+    width: 30px;
+    height: 30px;
+}
+
+#pushButtonClose:hover,
+#pushButtonClose:checked
+{
+    background-color: #FF6347;
+}
+
+#pushButtonOk
+{
+    width: 50px;
+    height: 30px;
+}
+
+QTextBrowser
+{
+    color: #000000;
+    border-width: 0px;
+}

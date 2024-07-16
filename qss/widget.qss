@@ -1,0 +1,44 @@
+QWidget
+{
+    color: #FFFFFF;
+}
+
+#widgetTitleBar
+{
+    background-color: qlineargradient(spread: pad, x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #66B4FF, stop: 1 #1E90FF);
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#labelTitle
+{
+    margin-left: 10px;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+QPushButton
+{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+QPushButton:hover,
+QPushButton:checked
+{
+    background-color: #1E90FF;
+}
+
+#pushButtonClose:hover,
+#pushButtonClose:checked
+{
+    background-color: #FF6347;
+}
