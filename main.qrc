@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/widget.qss</file>
+        <file>qss/mainwindow.qss</file>
+        <file>language/zh_cn.qm</file>
+        <file>qss/about.qss</file>
+        <file>language/widgets.qm</file>
+        <file>language/network.qm</file>
+        <file>qss/tooltip.qss</file>
+        <file>image/right-arrow.svg</file>
+        <file>image/left-arrow.svg</file>
+        <file>image/right-arrow-selected.svg</file>
+        <file>image/left-arrow-selected.svg</file>
+        <file>image/check.svg</file>
+        <file>image/circle.svg</file>
+    </qresource>
+</RCC>
