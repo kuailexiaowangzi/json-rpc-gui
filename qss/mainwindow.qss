@@ -13,7 +13,12 @@ QWidget
     border-bottom-right-radius: 5px;
 }
 
-QMenu,
+QMenu
+{
+    color: #FFFFFF;
+    background-color: #6495ED;
+}
+
 QMenuBar
 {
     color: #FFFFFF;
@@ -34,7 +39,11 @@ QMenuBar::item
     border-radius: 5px;
 }
 
-QMenu::item:selected,
+QMenu::item:selected
+{
+    background-color: #4169E1;
+}
+
 QMenuBar::item:selected
 {
     background-color: #1E90FF;
