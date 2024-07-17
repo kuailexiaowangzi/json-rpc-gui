@@ -41,8 +41,6 @@ RESOURCES += \
     main.qrc
 
 TRANSLATIONS += \
-    language/network.ts \
-    language/widgets.ts \
     language/zh_cn.ts
 
 win{
