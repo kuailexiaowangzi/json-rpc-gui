@@ -188,6 +188,11 @@ QPushButton:hover
     background-color: #1E90FF;
 }
 
+QPushButton:disable
+{
+    background-color: #808080;
+}
+
 QTabWidget::pane
 {
     border-width: 1px;
