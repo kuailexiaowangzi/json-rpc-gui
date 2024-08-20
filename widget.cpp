@@ -5,7 +5,6 @@
 #include <QGraphicsDropShadowEffect>
 #include <QMouseEvent>
 #include <QScreen>
-#include <QPropertyAnimation>
 #include <QPainterPath>
 #include <QWindow>
 #include <QDebug>
@@ -459,7 +458,7 @@ bool Widget::eventFilter(QObject *watched, QEvent *event)
                 //Window resize.
                 if(!screenTopBottom.contains(mouseMoveEvent->globalPos()) && windowPosition == Position::positionType::topBottom)
                 {
-                    windowNormalRect = QRect(pos().x(), pos().y(), width(), windowNormalRect.height());
+                    windowNormalRect = QRect(x(), y(), width(), windowNormalRect.height());
                     showNormal();
                 }
             }
@@ -643,15 +642,11 @@ void Widget::on_pushButtonClose_clicked()
 //Window maximized remove margin.
 void Widget::showMaximized()
 {
-    ui->verticalLayoutWidget->setContentsMargins(0, 0, 0, 0);
-    setGeometry(x() + windowMargin.left(), y() + windowMargin.top(), width() - windowMargin.left() - windowMargin.right(), height() - windowMargin.top() - windowMargin.bottom());
     //Current screen available rect.
     QRect screenRect = screen()->availableGeometry();
-    QPropertyAnimation *windowMaximizeAnimation = new QPropertyAnimation(this, "geometry");
-    windowMaximizeAnimation->setEndValue(screenRect);
-    windowMaximizeAnimation->setEasingCurve(QEasingCurve::Linear);
-    windowMaximizeAnimation->setDuration(100);
-    windowMaximizeAnimation->start(QAbstractAnimation::DeleteWhenStopped);
+    ui->verticalLayoutWidget->setContentsMargins(0, 0, 0, 0);
+    setGeometry(screenRect);
+    QWidget::showMaximized();
     windowPosition = Position::positionType::maximize;
     ui->pushButtonMaximize->setChecked(true);
     ui->pushButtonMaximize->setStyleSheet("background-color: #1E90FF");
@@ -663,7 +658,7 @@ void Widget::showMaximized()
 void Widget::showNormal()
 {
     ui->verticalLayoutWidget->setContentsMargins(windowMargin);
-    setGeometry(x() - windowMargin.left(), y() - windowMargin.top(), width() + windowMargin.left() + windowMargin.right(), height() + windowMargin.top() + windowMargin.bottom());
+    QWidget::showNormal();
     setGeometry(windowNormalRect);
     windowPosition = Position::positionType::none;
     ui->pushButtonMaximize->setChecked(false);
